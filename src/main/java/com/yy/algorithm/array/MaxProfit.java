@@ -69,8 +69,9 @@ public class MaxProfit {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{7,1,5,3,6,4};
-        System.out.println(maxProfitFour(arr));
+//        int[] arr = new int[]{7,1,5,3,6,4};
+        int[] arr = new int[]{7,1,5,8,9,4};
+        System.out.println(maxProfitThree(arr));
     }
 
 }
