@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * @version 1.0
- * @description:
+ * @description: 删除重复元素
  * @author: yy
  * @date: 2020/12/25
  */
