@@ -19,6 +19,7 @@
 admin/log.path*/
 *.DS_Store
 /target/
+out/
 
 
 ### NetBeans ###
