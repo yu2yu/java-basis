@@ -22,8 +22,15 @@ public class MainFoodBuilder {
     @Setter
     @Getter
     private String title;
+    @Setter
+    @Getter
+    private int count;
     private List<Product> foods = new ArrayList<>();
 
+    public MainFoodBuilder(String title, int count) {
+        this.title = title;
+        this.count = count;
+    }
 
     public MainFoodBuilder appendFood(Product product){
         foods.add(product);
@@ -43,33 +50,13 @@ public class MainFoodBuilder {
     public String getFoodDetails(){
         // 需要计算出总价
         StringBuilder sb = new StringBuilder();
-        sb.append("套餐: "+this.getTitle()).append("\r\n");
+        sb.append("套餐: "+this.getTitle()).append(String.format(",%s份\r\n",this.getCount()));
         foods.forEach(k -> {
-            sb.append(String.format("%s,单价为：%s,重量：%s \r\n",k.getTitle(),k.getPrice(),k.getHeavity()));
+            sb.append(String.format("%s,单价为：%s,重量：%s \r\n",k.getTitle(),k.getPrice(),k.getHeavity()*count));
         });
-        String totalPrice = foods.stream().map(Product::getTotalPrice).reduce(BigDecimal::add).get().toString();
+        String totalPrice = foods.stream().map(Product::getTotalPrice).reduce(BigDecimal::add).get().multiply(new BigDecimal(count)).toString();
         sb.append(totalPrice);
         return sb.toString();
-    }
-
-    @Test
-    public void testBuilder() {
-        Product food = new Product("蛋炒饭", 1, new BigDecimal("15.99"));
-        Product food2 = new Product("炸酱面", 1, new BigDecimal("13.99"));
-        Product drink = new Product("可乐", 1, new BigDecimal("5.00"));
-        Product extra = new Product("火腿", 1, new BigDecimal("2.00"));
-
-        MainFoodBuilder chaoFan = new MainFoodBuilder();
-        chaoFan.setTitle("蛋炒饭套餐");
-        chaoFan.appendFood(food).appendDrink(drink).appendExtra(extra);
-        System.out.println(chaoFan.getFoodDetails());
-
-        System.out.println("=========");
-
-        MainFoodBuilder noodle = new MainFoodBuilder();
-        noodle.setTitle("炸酱面套餐");
-        noodle.appendFood(food2).appendDrink(drink).appendExtra(extra);
-        System.out.println(noodle.getFoodDetails());
     }
 
 }
