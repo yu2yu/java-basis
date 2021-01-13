@@ -26,18 +26,14 @@ public class IsPalindrome {
         str = str.toLowerCase();
         int left = 0,right=str.length()-1;
         while(left<right){
-
-            if (!((str.charAt(left) >= '0' && str.charAt(left) <= '9') || (str.charAt(left) >= 'a' && str.charAt(left) <= 'z'))) {
+            if (!Character.isDigit(str.charAt(left)) && !Character.isLowerCase(str.charAt(left)) ) {
                 left++;
                 continue;
             }
-
-            if (!((str.charAt(right) >= '0' && str.charAt(right) <= '9') || (str.charAt(right) >= 'a' && str.charAt(right) <= 'z'))) {
+            if (!Character.isDigit(str.charAt(right)) && !Character.isLowerCase(str.charAt(right))) {
                 right--;
                 continue;
             }
-
-
             if(str.charAt(left) != str.charAt(right)){
                 return false;
             }
