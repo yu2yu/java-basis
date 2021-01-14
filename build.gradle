@@ -24,7 +24,12 @@ dependencies {
 
     implementation 'com.google.guava:guava:30.1-jre'
 
+    // jackson
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.1'
+
+    // spring
+    implementation 'org.springframework:spring-core:5.3.3'
+    implementation 'org.springframework:spring-context:5.3.3'
 
     implementation 'junit:junit:4.12'
 

@@ -7,7 +7,6 @@ package com.yy.algorithm.string;
  */
 public class KMP {
 
-
     private int[] next;
     private char[] pats;
     private String pat;
