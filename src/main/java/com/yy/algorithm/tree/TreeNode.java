@@ -1,10 +1,13 @@
 package com.yy.algorithm.tree;
 
+import lombok.Data;
+
 /**
  * @description:
  * @author: yy
  * @date: 2021/1/15
  */
+@Data
 public class TreeNode {
     int val;
     TreeNode left;
