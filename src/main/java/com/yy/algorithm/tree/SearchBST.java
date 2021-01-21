@@ -23,13 +23,10 @@ public class SearchBST {
     public TreeNode searchBST2(TreeNode root, int val) {
         if(root == null || root.val == val) return root;
         // 使用队列
-        Queue<TreeNode> queue = new ArrayDeque<>();
-        queue.offer(root);
-        while(!queue.isEmpty()) {
-            root = queue.poll();
+        while(root != null) {
             if (root.val == val) return root;
-            else if (root.val > val && root.left != null) queue.offer(root.left);
-            else if (root.val < val && root.right != null) queue.offer(root.right);
+            else if (root.val > val) root = root.left;
+            else if (root.val < val) root = root.right;
         }
         return null;
     }

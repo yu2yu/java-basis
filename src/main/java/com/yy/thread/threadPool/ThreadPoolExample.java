@@ -4,6 +4,7 @@ import java.sql.Time;
 import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -112,7 +113,6 @@ public class ThreadPoolExample {
 
         TimeUnit.SECONDS.sleep(50);
         threadPoolExecutor.shutdown();
-
     }
 
     private void executorTask(ExecutorService executorService) throws InterruptedException {
@@ -128,15 +128,6 @@ public class ThreadPoolExample {
         }
         TimeUnit.SECONDS.sleep(6);
         executorService.shutdown();
-    }
-
-
-    public static void main(String[] args) throws InterruptedException {
-//        new ThreadPoolExample().fixedThreadPool();
-//        new ThreadPoolExample().cachedThreadPool();
-//        new ThreadPoolExample().singleThreadExecutor();
-//        new ThreadPoolExample().scheduledThreadPool();
-        new ThreadPoolExample().threadPoolExecutor();
     }
 
 }
