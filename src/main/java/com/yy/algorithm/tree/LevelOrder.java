@@ -1,11 +1,9 @@
 package com.yy.algorithm.tree;
 
 import org.junit.Test;
-import sun.reflect.generics.tree.Tree;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Queue;
 
