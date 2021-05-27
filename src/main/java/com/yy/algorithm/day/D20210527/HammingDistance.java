@@ -54,9 +54,10 @@ public class HammingDistance {
 
     @Test
     public void testBinaryString(){
-        System.out.println(hammingDistanceTwo(1,4));
-        System.out.println(hammingDistanceThree(1,4));
-        System.out.println(hammingDistanceFour(1,4));
+        assert 2==hammingDistance(1,4);
+        assert 2==hammingDistanceTwo(1,4);
+        assert 2==hammingDistanceThree(1,4);
+        assert 2==hammingDistanceFour(1,4);
     }
 
 }
