@@ -9,10 +9,10 @@ package com.yy.algorithm.linklist;
  */
 public class LinkNode {
 
-    int val;
-    LinkNode next;
-    LinkNode() {}
-    LinkNode(int val) { this.val = val; }
+    public int val;
+    public LinkNode next;
+    public LinkNode() {}
+    public LinkNode(int val) { this.val = val; }
     LinkNode(int val, LinkNode next) { this.val = val; this.next = next; }
 
 
